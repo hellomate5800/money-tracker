@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding-bottom: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+header {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+header h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.balance-display {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.balance-display p {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-bottom: 8px;
+}
+
+.balance-display h2 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+main {
+    margin-top: 20px;
+}
+
+.input-section {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.input-section h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+input[type="number"],
+input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-add {
+    background: #4CAF50;
+    color: white;
+}
+
+.btn-add:active {
+    background: #45a049;
+    transform: scale(0.98);
+}
+
+.btn-subtract {
+    background: #f44336;
+    color: white;
+}
+
+.btn-subtract:active {
+    background: #da190b;
+    transform: scale(0.98);
+}
+
+.btn-clear {
+    width: 100%;
+    background: #ff9800;
+    color: white;
+    padding: 12px;
+}
+
+.btn-clear:active {
+    background: #e68900;
+    transform: scale(0.98);
+}
+
+.transactions-section {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.transactions-section h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.transactions-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #f0f0f0;
+    animation: slideIn 0.3s ease;
+}
+
+.transaction-item:last-child {
+    border-bottom: none;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.transaction-info {
+    flex: 1;
+}
+
+.transaction-description {
+    font-weight: 600;
+    color: #333;
+    font-size: 14px;
+}
+
+.transaction-date {
+    font-size: 12px;
+    color: #999;
+    margin-top: 4px;
+}
+
+.transaction-amount {
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 15px;
+}
+
+.transaction-amount.add {
+    color: #4CAF50;
+}
+
+.transaction-amount.subtract {
+    color: #f44336;
+}
+
+.empty-message {
+    text-align: center;
+    color: #999;
+    padding: 30px 0;
+    font-size: 14px;
+}
+
+.actions {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    .balance-display h2 {
+        font-size: 32px;
+    }
+
+    .input-section,
+    .transactions-section {
+        padding: 20px;
+    }
+} /* PWA Install Prompt Styles */
+.install-prompt {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 15px;
+    right: 15px;
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+.install-prompt.show {
+    display: block;
+    animation: slideUp 0.3s ease;
+}
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
