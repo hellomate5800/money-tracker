@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#4CAF50">
+    <meta name="description" content="Personal Money Tracker App">
+    <title>Money Tracker</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" sizes="192x192" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%234CAF50' width='192' height='192'/><text x='50%' y='50%' font-size='100' fill='white' text-anchor='middle' dominant-baseline='middle'>$</text></svg>">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💰 Money Tracker</h1>
+            <div class="balance-display">
+                <p>Current Balance</p>
+                <h2 id="totalBalance">$0.00</h2>
+            </div>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <h3>Add Transaction</h3>
+                <input type="number" id="amountInput" placeholder="Enter amount" step="0.01">
+                <input type="text" id="descriptionInput" placeholder="Description (optional)">
+                <div class="button-group">
+                    <button id="addMoneyBtn" class="btn btn-add">+ Add Money</button>
+                    <button id="subtractMoneyBtn" class="btn btn-subtract">- Spend Money</button>
+                </div>
+            </div>
+
+            <div class="transactions-section">
+                <h3>Transaction History</h3>
+                <div id="transactionsList" class="transactions-list">
+                    <p class="empty-message">No transactions yet</p>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button id="clearAllBtn" class="btn btn-clear">Clear All Data</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
